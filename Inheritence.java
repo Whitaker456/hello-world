@@ -29,16 +29,16 @@ class Person {
       Person terry = new Person("Terry", 16);
 
       Teacher richardi = new Teacher("Richardi", 32, 2, "CTC");
-      Student bill = new Student("Bill", 15, 3.5f, 2018);
-      Student zach = new Student("Zach", 17, 3.2f, 2017);
+      Student bill = new Student("Bill","address", 15, 3.5f, 2018);
+      Student zach = new Student("Zach", "12 Diamond Street", 17, 3.2f, 2017);
       Teacher lamneck = new Teacher("Lamneck", 35, 7, "Math");
-      Student tyler = new Student("Tyler", 15, 2.7f, 2019);
+      Student tyler = new Student("Tyler", "address", 15, 2.7f, 2019);
 
       System.out.println("");
       System.out.println("                                            High School Transcipt");
       System.out.println("Student Information");
-      System.out.println("Full Name: Zach Whitaker");
-      System.out.println("Address: 12 Diamond Street");
+      System.out.println("Full Name: " + zach.name);
+      System.out.println("Address: " + zach.address);
       System.out.println("Conway, NH 03813");
       System.out.println("Phone Number: 333-333-3333");
       System.out.println("Date of Birth: 12/01/1998");
@@ -103,9 +103,11 @@ class Teacher extends Person {
 class Student extends Person {
   float gpa;
   int yearOfGrad;
+  String address;
 
-  public Student(String Name, int Age, float Gpa, int YearofGrad){
+  public Student(String Name, String Address, int Age, float Gpa, int YearofGrad){
     super(Name, Age);
+    address = Address;
     gpa = Gpa;
     yearOfGrad = YearofGrad;
   }
